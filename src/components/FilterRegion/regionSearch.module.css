@@ -5,6 +5,7 @@
     border-radius: 5px;
     padding: 20px;
     margin-left: 5%;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.178);
 }
 .optionWrapper:focus {
     outline: none;
@@ -21,4 +22,10 @@
 
 .darkTheme::placeholder {
     color: var(--white--text);
+}
+
+@media (min-width: 840px) {
+    .optionWrapper {
+        margin-right: 30px;
+    }
 }

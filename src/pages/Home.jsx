@@ -14,7 +14,7 @@ const Home = () => {
                 <Search/>
                 <FilterRegion/>
             </div>
-            <AllCountries/>
+            <AllCountries className={style.bodyGrid}/>
         </div>
     )
 }

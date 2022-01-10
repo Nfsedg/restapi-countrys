@@ -10,3 +10,21 @@
 .darkTheme {
     background-color: var(--black-background);
 }
+
+@media (min-width: 840px) {
+    .searchOptions {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 40px;
+        margin-bottom: 70px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .searchOptions {
+        max-width: 1600px;
+        margin: 0 auto;
+        margin-bottom: 60px;
+    }
+}

@@ -1,0 +1,25 @@
+.bodyGrid {
+    min-height: 100vh;
+}
+@media (min-width: 840px) {
+    .bodyGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 20px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .bodyGrid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 30px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .bodyGrid {
+        width: 1600px;
+        margin: 0 auto;
+    }
+}

@@ -41,3 +41,11 @@
 .darkActive .icon {
     color: var(--white--text);
 }
+
+
+
+@media (min-width: 780px) {
+    .title {
+        font-size: 20px;
+    }
+}

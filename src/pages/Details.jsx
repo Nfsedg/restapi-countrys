@@ -48,31 +48,31 @@ export const Details = () => {
                     <div className={style.dataWrapper}>
                         <img src={countryDetail[0].flags.svg} className={style.flagImage} alt={`${countryDetail[0].name.common} flag`} />
                         <div>
-                            <h2 className={style.name}>{countryDetail[0].name.common}</h2>
-                            <p>Native Name: <span>{countryDetail[0].name.official}</span></p>
-                            <p>Population: <span>{countryDetail[0].population}</span></p>
-                            <p>Region: <span>{countryDetail[0].region}</span></p>
-                            <p>Sub Region: <span>{countryDetail[0].subregion}</span></p>
-                            <p>Capital: <span>{countryDetail[0].capital}</span></p>
-                        </div>
-                        <div>
-                            <p>Top Level: <span>{countryDetail[0].tld}</span></p>
-                            <p>Currencies: <span>{dataIteration(countryDetail[0].currencies, 'currency')}</span></p>
-                            <p>Languages: <span>{dataIteration(countryDetail[0].languages, 'languages')}</span></p>
-                        </div>
-                    </div>
-                    <div>
-                        <div className={style.borderData}>
-                            <h3>Border Countries:</h3>
-                            {
-                                countryDetail[0].borders 
-                                    ? countryDetail[0].borders.map(i => (
-                                        <button key={i} onClick={() => setUpdateData(i)}>
-                                            <Link to={`/detail/${i}`}>{i}</Link>
-                                        </button>
-                                    )) 
-                                    : <p>Not Information</p>
-                            }
+                            <div>
+                                <h2 className={style.name}>{countryDetail[0].name.common}</h2>
+                                <p>Native Name: <span>{countryDetail[0].name.official}</span></p>
+                                <p>Population: <span>{countryDetail[0].population}</span></p>
+                                <p>Region: <span>{countryDetail[0].region}</span></p>
+                                <p>Sub Region: <span>{countryDetail[0].subregion}</span></p>
+                                <p>Capital: <span>{countryDetail[0].capital}</span></p>
+                            </div>
+                            <div>
+                                <p>Top Level: <span>{countryDetail[0].tld}</span></p>
+                                <p>Currencies: <span>{dataIteration(countryDetail[0].currencies, 'currency')}</span></p>
+                                <p>Languages: <span>{dataIteration(countryDetail[0].languages, 'languages')}</span></p>
+                            </div>
+                            <div className={style.borderData}>
+                                <h3>Border Countries:</h3>
+                                {
+                                    countryDetail[0].borders 
+                                        ? countryDetail[0].borders.map(i => (
+                                            <button key={i} onClick={() => setUpdateData(i)}>
+                                                <Link to={`/detail/${i}`}>{i}</Link>
+                                            </button>
+                                        )) 
+                                        : <p>Not Information</p>
+                                }
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -80,7 +80,7 @@ export const Details = () => {
         )
     } else {
         return(
-            <p>Loading...</p>
+            <p className={`${style.body} ${switchTheme ? style.darkTheme : style.whiteTheme}`}>Loading...</p>
         )
     }
 }

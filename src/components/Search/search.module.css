@@ -7,7 +7,8 @@
     padding: 10px 25px;
     display: flex;
     justify-content: center;
-    border-radius: 1px;
+    border-radius: 2px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.178);
 }
 .search {
     font-family: var(--font-style);
@@ -30,4 +31,12 @@
 }
 .darkTheme {
     background-color: var(--black-elements);
+}
+
+@media (min-width: 840px) {
+    .searchWrapper {
+        height: 50px;
+        align-items: center;
+        margin: 0 0 0 30px;
+    }
 }

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { Countrie } from '../components/Countrie/index.jsx'
 import { searchContext } from '../context/searchContext.js'
+import style from './allCountries.module.css'
 
 export const AllCountries = () => {
     const { setCountries, filterCountry } = React.useContext(searchContext)
@@ -28,7 +29,7 @@ export const AllCountries = () => {
     }, [])
 
     return(
-        <React.Fragment>
+        <div className={style.bodyGrid}>
             {filterCountry.length === 0 
                 ? <p>Loading...</p> 
                 : (filterCountry.map(data => (
@@ -37,7 +38,7 @@ export const AllCountries = () => {
                     </Link>
             )))}
             <Outlet/>
-        </React.Fragment>
+        </div>
         
     )
 }
