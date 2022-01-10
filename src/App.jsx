@@ -5,11 +5,14 @@ import { Header } from './components/Header/index.jsx'
 import { NotFound } from './pages/NotFound.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { SearchProvider } from './context/searchContext.js'
+import { ThemeProvider } from './context/themeContext.js'
+import './globals.css'
 
 export const App = () => {
     return(
         <Fragment>
             <SearchProvider>
+            <ThemeProvider>
                 <Header/>
                 <BrowserRouter>
                     <Routes>
@@ -18,6 +21,7 @@ export const App = () => {
                         <Route element={<NotFound/>}/>
                     </Routes>
                 </BrowserRouter>
+            </ThemeProvider>
             </SearchProvider>
         </Fragment>
     )

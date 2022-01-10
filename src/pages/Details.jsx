@@ -1,7 +1,11 @@
 import React from 'react'
-import { Link, useParams, Outlet } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
+import { themeContext } from '../context/themeContext'
+import { BiArrowBack } from 'react-icons/bi'
+import style from './details.module.css'
 
 export const Details = () => {
+    const { switchTheme } = React.useContext(themeContext)
     let params = useParams();
     const [countryDetail, setCoutryDetail] = React.useState([])
     const [updateData, setUpdateData] = React.useState('')
@@ -38,39 +42,40 @@ export const Details = () => {
 
     if(countryDetail.length !== 0) {
         return(
-            <div>
-                <Link to='/'>icon Back</Link>
-                <div>
-                    <img src={countryDetail[0].flags.svg} alt={`${countryDetail[0].name.common} flag`} />
-                    <div>
-                        <h2>{countryDetail[0].name.common}</h2>
-                        <p>Native Name: {countryDetail[0].name.official}</p>
-                        <p>Population: {countryDetail[0].population}</p>
-                        <p>Region: {countryDetail[0].region}</p>
-                        <p>Sub Region: {countryDetail[0].subregion}</p>
-                        <p>Capital: {countryDetail[0].capital}</p>
+            <div className={`${style.body} ${switchTheme ? style.darkTheme : style.whiteTheme}`}>
+                <div className={style.wrapper}>
+                    <Link to='/' className={style.blackButton}><BiArrowBack className={style.icon}/>Back</Link>
+                    <div className={style.dataWrapper}>
+                        <img src={countryDetail[0].flags.svg} className={style.flagImage} alt={`${countryDetail[0].name.common} flag`} />
+                        <div>
+                            <h2 className={style.name}>{countryDetail[0].name.common}</h2>
+                            <p>Native Name: <span>{countryDetail[0].name.official}</span></p>
+                            <p>Population: <span>{countryDetail[0].population}</span></p>
+                            <p>Region: <span>{countryDetail[0].region}</span></p>
+                            <p>Sub Region: <span>{countryDetail[0].subregion}</span></p>
+                            <p>Capital: <span>{countryDetail[0].capital}</span></p>
+                        </div>
+                        <div>
+                            <p>Top Level: <span>{countryDetail[0].tld}</span></p>
+                            <p>Currencies: <span>{dataIteration(countryDetail[0].currencies, 'currency')}</span></p>
+                            <p>Languages: <span>{dataIteration(countryDetail[0].languages, 'languages')}</span></p>
+                        </div>
                     </div>
                     <div>
-                        <p>Top Level: {countryDetail[0].tld}</p>
-                        <p>Currencies: {dataIteration(countryDetail[0].currencies, 'currency')}</p>
-                        <p>Languages: {dataIteration(countryDetail[0].languages, 'languages')}</p>
+                        <div className={style.borderData}>
+                            <h3>Border Countries:</h3>
+                            {
+                                countryDetail[0].borders 
+                                    ? countryDetail[0].borders.map(i => (
+                                        <button key={i} onClick={() => setUpdateData(i)}>
+                                            <Link to={`/detail/${i}`}>{i}</Link>
+                                        </button>
+                                    )) 
+                                    : <p>Not Information</p>
+                            }
+                        </div>
                     </div>
                 </div>
-                <div>
-                    <div>
-                        <h3>Border Countries:</h3>
-                        {
-                            countryDetail[0].borders 
-                                ? countryDetail[0].borders.map(i => (
-                                    <button key={i} onClick={() => setUpdateData(i)}>
-                                        <Link to={`/detail/${i}`}>{i}</Link>
-                                    </button>
-                                )) 
-                                : <p>Not Information</p>
-                        }
-                    </div>
-                </div>
-                <Outlet/>
             </div>
         )
     } else {

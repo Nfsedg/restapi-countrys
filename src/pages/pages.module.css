@@ -1,0 +1,12 @@
+.bodywhiteTheme {
+    background-color: var(--white-background);
+}
+.searchOptions {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.darkTheme {
+    background-color: var(--black-background);
+}

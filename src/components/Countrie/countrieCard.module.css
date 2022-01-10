@@ -1,0 +1,55 @@
+.cardWrapper {
+    width: 90%;
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 50px;
+}
+
+.flagImage {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+.cardDetails {
+    padding: 20px;
+}
+.name {
+    font-family: var(--font-style);
+    font-weight: 800;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+.data {
+    margin-bottom: 20px;
+}
+.data > li {
+    line-height: 28px;
+    list-style: none;
+    font-family: var(--font-style);
+    font-weight: 600;
+}
+.data > li > span {
+    font-weight: 300;
+}
+/* THEMES */
+.whiteTheme {
+    background-color: var(--white--text);
+}
+.whiteTheme .name {
+    color: var(--black-text);
+}
+.whiteTheme .data > li{
+    color: var(--black-text);
+}
+
+
+.darkTheme {
+    background-color: var(--black-elements);
+}
+.darkTheme .name {
+    color: var(--white--text);
+}
+
+.darkTheme .data > li {
+    color: var(--white--text);
+}

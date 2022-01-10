@@ -1,18 +1,16 @@
 import React from 'react'
-import './stlyes.css'
-
-const stylesData = {
-    height: '450px'
-}
+import { themeContext } from '../../context/themeContext'
+import style from './countrieCard.module.css'
 
 export const Countrie = ({ dataCountries }) => {
     const [visible, setVisible] = React.useState(false)
     const countryCard = React.useRef(null)
+    const { switchTheme } = React.useContext(themeContext)
 
     const options = {
         root: null,
         rootMargin: "0px",
-        threshold: 0.8
+        threshold: 1
     }
     const callback = (entries) => {
         const [ entry ] = entries
@@ -29,16 +27,16 @@ export const Countrie = ({ dataCountries }) => {
     })
 
     return(
-        <div ref={countryCard} style={stylesData}>
+        <div ref={countryCard} className={`${style.cardWrapper} ${switchTheme ? style.darkTheme : style.whiteTheme}`}>
             {visible ? (
                 <div>
-                    <img src={dataCountries.flags.svg} alt="flag country" />
-                    <div>
-                        <h2>{dataCountries.name}</h2>
-                        <ul>
-                            <li>{dataCountries.population}</li>
-                            <li>{dataCountries.region}</li>
-                            <li>{dataCountries.capital}</li>
+                    <img src={dataCountries.flags.svg} alt="flag country" className={style.flagImage}/>
+                    <div className={style.cardDetails}>
+                        <h2 className={style.name}>{dataCountries.name}</h2>
+                        <ul className={style.data}>
+                            <li>Population: <span>{dataCountries.population}</span></li>
+                            <li>Region: <span>{dataCountries.region}</span></li>
+                            <li>Capital: <span>{dataCountries.capital}</span></li>
                         </ul>
                     </div>
                 </div>

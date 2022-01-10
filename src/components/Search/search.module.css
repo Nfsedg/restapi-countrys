@@ -1,0 +1,33 @@
+.searchWrapper {
+    width: 90%;
+    max-width: 780px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    padding: 10px 25px;
+    display: flex;
+    justify-content: center;
+    border-radius: 1px;
+}
+.search {
+    font-family: var(--font-style);
+    width: 70%;
+    border: none;
+    margin-left: 20px;
+    background-color: transparent;
+}
+.search:focus {
+    outline: none;
+}
+.search::placeholder {
+    color: var(--input);
+}
+.icon {
+    color: var(--input);
+}
+.whiteTheme {
+    background-color: var(--white--text);
+}
+.darkTheme {
+    background-color: var(--black-elements);
+}

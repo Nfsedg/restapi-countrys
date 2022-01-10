@@ -1,0 +1,18 @@
+body, * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --white--text: hsl(0, 0%, 100%);
+    --black-text: hsl(200, 15%, 8%);
+    --white-background: hsl(0, 0%, 98%);
+    --black-background: hsl(207, 26%, 17%);
+    --black-elements: hsl(209, 23%, 22%);
+    --input: hsl(0, 0%, 52%);
+    --font-style: 'Nunito Sans', sans-serif;
+}
+a {
+    text-decoration: none;
+}

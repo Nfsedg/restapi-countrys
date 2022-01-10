@@ -1,16 +1,21 @@
-import React, { Fragment } from 'react'
-import { Header } from '../components/Header/index.jsx'
+import React, { useContext } from 'react'
 import { Search } from '../components/Search/index.jsx'
 import { FilterRegion } from '../components/FilterRegion/index.jsx'
 import { AllCountries } from '../Container/AllCountries.jsx'
+import { themeContext } from '../context/themeContext.js'
+import style from './pages.module.css'
 
 const Home = () => {
+    const { switchTheme } = useContext(themeContext)
+
     return(
-        <Fragment>
-            <Search/>
-            <FilterRegion/>
+        <div className={switchTheme ? style.darkTheme : style.whiteTheme}>
+            <div className={style.searchOptions}>
+                <Search/>
+                <FilterRegion/>
+            </div>
             <AllCountries/>
-        </Fragment>
+        </div>
     )
 }
 

@@ -1,0 +1,24 @@
+.optionWrapper {
+    width: 194px;
+    height: 48px;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    margin-left: 5%;
+}
+.optionWrapper:focus {
+    outline: none;
+}
+.whiteTheme::placeholder {
+    color: var(--black-text);
+}
+.whiteTheme { 
+    background-color: var(--white--text);
+}
+.darkTheme {
+    background-color: var(--black-elements);
+}
+
+.darkTheme::placeholder {
+    color: var(--white--text);
+}

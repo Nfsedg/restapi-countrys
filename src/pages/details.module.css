@@ -1,0 +1,85 @@
+.body {
+    height: 100vh;
+}
+.wrapper {
+    width: 90%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+.blackButton {
+    height: 35px;
+    width: 98px;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-style);
+    border-radius: 2px;
+}
+.icon {
+    margin-right: 10px;
+}
+.flagImage {
+    width: 100%;
+    margin-bottom: 40px;
+}
+.name {
+    font-family: var(--font-style);
+    font-size: 24px;
+    padding-bottom: 20px;
+}
+.dataWrapper > div {
+    margin-bottom: 30px;
+}
+.dataWrapper p {
+    line-height: 30px;
+    font-family: var(--font-style);
+    font-weight: 600;
+    font-size: 16px;
+}
+.dataWrapper p > span {
+    font-weight: 300;
+}
+.borderData h3 {
+    font-family: var(--font-style);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.borderData button {
+    border-radius: 5px;
+    border: none;
+    width: 60px;
+    height: 40px;
+    margin: 10px;
+
+}
+
+/* THEMES */
+
+.whiteTheme, .blackButton {
+    background-color: var(--white-background);
+}
+.whiteTheme p {
+    color: var(--black-text);
+}
+.whiteTheme button {
+    background-color: var(--white--text);
+}
+.whiteTheme a {
+    color: var(--black-text);
+}
+
+.darkTheme {
+    background-color: var(--black-background);
+}
+.darkTheme .blackButton, button {
+    background-color: var(--black-elements);
+}
+.darkTheme a {
+    color: var(--white--text);
+}
+.darkTheme h2, h3, p {
+    color: var(--white--text);
+}

@@ -1,0 +1,43 @@
+.header {
+    width: 100%;
+    background-color: var(--white--text);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 20px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.096);
+    position: relative;
+}
+.title {
+    color: var(--black-text);
+    font-family: var(--font-style);
+    font-weight: 800;
+    font-size: 16px;
+}
+.switch {
+    font-family: var(--font-style);
+    font-weight: 600;
+    font-size: 14px;
+}
+.switch:hover {
+    cursor: pointer;
+}
+.icon {
+    margin-right: 5px;
+    color: var(--black-text);
+}
+
+/* Dark Theme */
+.darkActive {
+    background-color: var(--black-elements);
+}
+.darkActive .title {
+    color: var(--white--text);
+}
+
+.darkActive .switch span {
+    color: var(--white--text);
+}
+.darkActive .icon {
+    color: var(--white--text);
+}
